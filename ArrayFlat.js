@@ -3,7 +3,7 @@ function flatArray(arr, depth=1, output=[]){
         output.push(arr)
         return output
     }else{
-        for(const elem in arr){
+        for(const elem of arr){
             if (Array.isArray(elem)){
                 flatArray(elem, depth-1, output)
             }else{
@@ -12,5 +12,6 @@ function flatArray(arr, depth=1, output=[]){
         }
         return output
     }
-
 }
+const arr = [1, 2, 3, 4, 5, [6, 4, 3, 5, [1, 2, 3]]];
+console.log(flatArray(arr,10))
